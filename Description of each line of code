@@ -1,0 +1,43 @@
+Importing the necessary libraries:
+
+import tweepy: Importing the Tweepy library for interacting with the Twitter API.
+from pymongo import MongoClient: Importing the MongoClient class from the PyMongo library for MongoDB integration.
+import streamlit as st: Importing the Streamlit library for building the user interface.
+Defining Twitter API credentials:
+
+consumer_key: The consumer key obtained from your Twitter developer account.
+consumer_secret: The consumer secret obtained from your Twitter developer account.
+access_token: The access token obtained from your Twitter developer account.
+access_token_secret: The access token secret obtained from your Twitter developer account.
+Establishing connection to the MongoDB database:
+
+client = MongoClient('mongodb://localhost:27017/'): Creating a MongoClient instance and connecting to the MongoDB server running on localhost.
+Authenticating the Twitter API:
+
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret): Creating an OAuthHandler instance with the consumer key and consumer secret.
+auth.set_access_token(access_token, access_token_secret): Setting the access token and access token secret.
+api = tweepy.API(auth): Creating an API instance using the authenticated handler.
+Defining a function to scrape Twitter data:
+
+def scrape_twitter_data(keyword, start_date, end_date, tweet_count): The function takes in parameters such as keyword, start date, end date, and tweet count.
+tweets = api.search(q=keyword, lang='en', count=tweet_count, since=start_date, until=end_date): Using the search method of the API object to retrieve tweets based on the provided parameters.
+tweet_data = []: Initializing an empty list to store the scraped tweet data.
+Looping through the retrieved tweets and extracting relevant information such as tweet text, username, and created date.
+Appending the extracted tweet data to the tweet_data list.
+Returning the tweet_data list.
+Defining the main function for the Streamlit application:
+def main(): This function contains the Streamlit application logic.
+Setting the page title and layout using st.set_page_config.
+Creating input fields using st.sidebar to allow users to enter the keyword, date range, and tweet count.
+Calling the scrape_twitter_data function with the provided input values to retrieve the tweet data.
+Displaying the scraped tweet data using st.dataframe.
+Adding a button using st.button to download the tweet data as a CSV file.
+Displaying a success message after downloading the file.
+Running the main function:
+if __name__ == '__main__':: This condition ensures that the main function is executed only when the script is run directly, not when imported as a module.
+Calling the main function to start the Streamlit application.
+This code combines Tweepy for Twitter API interaction, PyMongo for MongoDB integration, and Streamlit for building the user interface, allowing users to search for tweets based on keywords, specify date ranges and tweet counts, view the scraped data, and download it as a CSV file.
+
+
+
+
