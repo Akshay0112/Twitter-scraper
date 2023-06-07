@@ -1,0 +1,38 @@
+How to execute the code
+
+Install the required libraries:
+
+Make sure you have installed the necessary libraries, including Tweepy, PyMongo, and Streamlit. You can use the following commands to install them:
+Copy code
+pip install tweepy
+pip install pymongo
+pip install streamlit
+Set up Twitter API credentials:
+
+Obtain your Twitter API credentials (consumer key, consumer secret, access token, and access token secret) from the Twitter Developer Portal. Create a Twitter developer account if you don't have one already.
+Set up MongoDB:
+
+Install MongoDB on your local machine or use a remote MongoDB server. Make sure MongoDB is running.
+Modify the code:
+
+Replace the placeholders in the code with your Twitter API credentials and MongoDB connection details. Update the consumer_key, consumer_secret, access_token, access_token_secret, and MongoDB connection URL in the code.
+Save the code:
+
+Save the code in a Python file with a .py extension, such as twitter_scraper.py.
+Run the code:
+
+Open a terminal or command prompt.
+Navigate to the directory where you saved the Python file.
+Execute the following command to run the code:
+arduino
+Copy code
+streamlit run twitter_scraper.py
+Access the Streamlit app:
+
+After running the command, a local server will start, and the Streamlit app will be accessible in your web browser at http://localhost:8501.
+Interact with the Streamlit app:
+
+In the Streamlit app, enter the keyword or hashtag to search for tweets.
+Select the date range and tweet count.
+Click the "Scrape and Download" button to retrieve the tweet data and download it as a CSV file.
+Note: Make sure you have a stable internet connection and the necessary permissions and access levels for using the Twitter API and accessing MongoDB.
